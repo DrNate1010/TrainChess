@@ -1,69 +1,42 @@
 import Image from "next/image";
+import './globals.css';
+import { House } from 'lucide-react';
+import { ChartNoAxesCombined } from 'lucide-react';
+import { GitFork } from 'lucide-react';
+import { Target } from 'lucide-react';
+import { TrendingUp } from 'lucide-react';
+import { UserRound } from 'lucide-react';
+import { Settings } from 'lucide-react';
 
-export default function Home() {
+export default function Dashboard() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+    <div className = "parentDiv" style= {{display: "grid"}}>
+      <div className ="Top-bar" style={{display: "flex"}}>
+          <div className = "logoDash" style= {{width: "18vw", height: "30vh", position: "relative"}}>
+            <Image 
+              className="logo" 
+              src="/Logo-Main.png" 
+              alt="Site logo" 
+              fill
+              style= {{objectFit: "contain"}}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+          <button className = "dashButton"><House size={40}/></button> {/** Home/dashboard */}
+          <button className = "analysisButton"><ChartNoAxesCombined size={40}/> </button> {/** Previous game analysis */}
+          <button className = "openingButton" ><GitFork size={40}/> </button> {/** Opening explorer */}
+          <button className = "trainButton"><Target size={40}/> </button> {/** Insights & Training center */}
+          <button className = "progButton"><TrendingUp size={40}/> </button> {/** Progress tracker*/}
+          <button className = "profileButton"><UserRound size={40}/> </button> {/** Profile */}
+          <button className = "settingsButton"><Settings size={40}/> </button> {/** Settings*/}
+      </div>
+
+        <div className = "analyticsParentDiv" style={{display: "grid" }}>
+          <div className = "analytic1"></div>  {/** Analytic 1 - Winrate carousel. all of the pages of the carousel will have like an analytic, maybe a graph or something, then a link to one of the other pages where we would dive deeper on it */}
+          <div className = "analytic2"></div> {/** Analytic 2 - Recommended puzzle or game review. similar to the winrate carousel, will feature a snapshot of a game or a puzzle and then a link to the corresponding page */}
+          <div className = "analytic3"></div> {/** Analytic 3 - Misc stat carousel. buncha random stats */}
+          <div className = "analytic4"></div> {/** Analytic 4 - Recommended areas of improvement. Brief recommendation then a link to the training center page */}
         </div>
-      </main>
     </div>
   );
 }
+
