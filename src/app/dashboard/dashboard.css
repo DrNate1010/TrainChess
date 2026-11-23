@@ -1,0 +1,177 @@
+@import url('../globals.css');
+
+.parentDiv {
+    width: 100vw;
+    height: 100vh;
+}
+
+.topNavBarDiv {
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    background-color: var(--bg-navbar);
+    align-items: center;
+
+}
+
+.navBarLogo {
+    height: auto;
+    width: 10%;
+    margin-right: 9%;
+    margin-top: 1%;
+}
+
+.dashboardButton,
+.analysisButton,
+.openingsButton,
+.trainingButton,
+.progressButton {
+    height: 40%;
+    width: 8%;
+    margin-left: 1%;
+    border-radius: 25px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--bg-elevated);
+    border: 1px solid var(--border-primary);
+    padding: 0 5px;
+    font-size: clamp(12px, 2vh, 18px);
+    white-space: nowrap;
+}
+
+
+.progressButton {
+    margin-right: 20%;
+}
+
+.dashboardButton {
+    margin-left: 6%;
+}
+
+.notifButton,
+.profileButton {
+    height: auto;
+    width: auto;
+    margin-left: 2vw;
+    background-color: var(--bg-navbar);
+    color: var(--text-muted);
+    border: none;
+    cursor: pointer;
+}
+
+
+
+.cardContainerParent {
+    width: 60%;
+    height: 85vh;
+}
+
+.cardContainerDivRow1 {
+    width: 100%;
+    /*Lowk think all of this could be optimized into a single div, idk tho its lowk really complex and I'm not too versed in css grid */
+    height: 28.57%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+.cardContainerDivRow2 {
+    width: 100%;
+    height: 35.71%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+.cardContainerDivRow3 {
+    width: 100%;
+    height: 35.71%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+.winrateCard,
+.accuracyCard,
+.gamesAnalyzedCard,
+.recommendedPracticeCard,
+.performanceCard,
+.latestGamesCard,
+.recentInsightsCard,
+.statsCard {
+    background-color: var(--bg-card);
+    width: auto;
+    height: auto;
+    margin: 2cqb;
+    border-radius: 20px;
+    border: 1px solid var(--border-primary);
+}
+
+.dashboardButton:hover,
+.analysisButton:hover,
+.openingsButton:hover,
+.trainingButton:hover,
+.progressButton:hover {
+    background-color: var(--card-hover);
+}
+
+.row1Icon {
+    color: var(--blue-primary);
+}
+
+.row1Title {
+    color: var(--text-secondary);
+}
+
+.row1Stat {
+    color: var(--text-primary);
+}
+
+.row1ImprovementStat {
+    color: var(--success);
+}
+
+.row1ImprovementText {
+    color: var(--text-muted);
+}
+
+.winrateCard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.headerContainer {
+    display: flex;
+    grid-area: 1/1;
+    align-items: center;
+    gap: 0.2vw;
+    font-size: 125%;
+    margin-left: 5%;
+    font-weight: bold;
+}
+
+.row1Stat {
+    grid-area: 2/1;
+    font-size: 200%;
+    align-self: center;
+    margin-left: 5%;
+}
+
+.improvementInfoContainer {
+    display: flex;
+    grid-area: 3/1;
+    align-items: flex-end;
+    gap: 0.2vw;
+    margin-bottom: 0.5vh;
+    font-size: 115%;
+    margin-left: 5%;
+}
+.winrateGraph {
+    grid-area: 1 / 2 / span 3 / span 1;
+    
+}
